@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentWelcomeBinding
@@ -16,6 +17,7 @@ import javax.inject.Inject
 class WelcomeFragment @Inject constructor() : Fragment() {
 
     private val viewModel: WelcomeViewModel by viewModels()
+    private val args: WelcomeFragmentArgs by navArgs()
     private lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
@@ -32,11 +34,6 @@ class WelcomeFragment @Inject constructor() : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        viewModel.initialize(arguments?.getString(SESSION_KEY) ?: "")
-    }
-
-    companion object {
-        const val TAG = "WelcomeFragment"
-        private const val SESSION_KEY = "session"
+        viewModel.initialize(args.session)
     }
 }

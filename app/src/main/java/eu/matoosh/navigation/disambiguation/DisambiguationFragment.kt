@@ -41,15 +41,4 @@ class DisambiguationFragment @Inject constructor() : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
     }
-
-    companion object {
-        const val TAG = "DisambiguationFragment"
-        private const val KEY_ID = "id"
-
-        fun forId(id: String) = DisambiguationFragment().apply {
-            arguments = Bundle().apply {
-                putString(KEY_ID, id)
-            }
-        }
-    }
 }

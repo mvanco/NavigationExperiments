@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentLoginBinding
@@ -17,6 +18,7 @@ import javax.inject.Inject
 class LoginFragment @Inject constructor() : Fragment() {
 
     private val viewModel: LoginViewModel by viewModels()
+    private val args: LoginFragmentArgs by navArgs()
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -39,14 +41,6 @@ class LoginFragment @Inject constructor() : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        viewModel.prefill(arguments?.getString(NICK_KEY) ?: "", arguments?.getString(
-            PASSWORD_KEY
-        ) ?: "")
-    }
-
-    companion object {
-        const val TAG = "LoginFragment"
-        private const val NICK_KEY = "nick"
-        private const val PASSWORD_KEY = "password"
+        viewModel.prefill(args.nick ?: "", args.password ?: "")
     }
 }

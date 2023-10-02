@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentRegistration2Binding
@@ -17,6 +18,7 @@ import javax.inject.Inject
 class Registration2Fragment @Inject constructor() : Fragment() {
 
     private val viewModel: Registration2ViewModel by viewModels()
+    private val args: Registration2FragmentArgs by navArgs()
     private lateinit var binding: FragmentRegistration2Binding
 
     override fun onCreateView(
@@ -39,12 +41,6 @@ class Registration2Fragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
-        viewModel.initialize(arguments?.getString(NAME_KEY) ?: "", arguments?.getString(SURNAME_KEY) ?: "")
-    }
-
-    companion object {
-        const val TAG = "DisambiguationFragment"
-        private const val NAME_KEY = "name"
-        private const val SURNAME_KEY = "surname"
+        viewModel.initialize(args.name, args.surname)
     }
 }
