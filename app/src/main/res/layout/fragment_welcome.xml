@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="eu.matoosh.navigation.home.WelcomeUiState.Idle"/>
         <variable
             name="viewModel"
             type="eu.matoosh.navigation.home.WelcomeViewModel" />

@@ -14,7 +14,7 @@ enum class Registration1ErrorCode() {
 
 @Stable
 sealed interface Registration1UiState {
-    object Idle : Registration1UiState
+    data object Idle : Registration1UiState
 }
 
 @HiltViewModel
@@ -26,8 +26,4 @@ class Registration1ViewModel @Inject constructor(
 
     val name = MutableStateFlow<String>("")
     val surname = MutableStateFlow<String>("")
-
-    fun onDone(v: View) {
-
-    }
 }
