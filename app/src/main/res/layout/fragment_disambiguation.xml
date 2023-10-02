@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="eu.matoosh.navigation.viewmodels.DisambiguationViewModel" />
+            type="eu.matoosh.navigation.disambiguation.DisambiguationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,11 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="eu.matoosh.navigation.viewmodels.Registration2UiState"/>
-        <import type="eu.matoosh.navigation.viewmodels.Registration2UiState.Idle"/>
+        <import type="eu.matoosh.navigation.registration.Registration2UiState"/>
         <variable
             name="viewModel"
-            type="eu.matoosh.navigation.viewmodels.Registration2ViewModel" />
+            type="eu.matoosh.navigation.registration.Registration2ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

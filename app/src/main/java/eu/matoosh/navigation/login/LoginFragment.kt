@@ -1,4 +1,4 @@
-package eu.matoosh.navigation.view
+package eu.matoosh.navigation.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
-import eu.matoosh.navigation.databinding.FragmentDisambiguationBinding
 import eu.matoosh.navigation.databinding.FragmentLoginBinding
-import eu.matoosh.navigation.viewmodels.DisambiguationViewModel
-import eu.matoosh.navigation.viewmodels.LoginViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -42,8 +39,8 @@ class LoginFragment @Inject constructor() : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        viewModel.prefill(arguments?.getString(LoginFragment.NICK_KEY) ?: "", arguments?.getString(
-            LoginFragment.PASSWORD_KEY
+        viewModel.prefill(arguments?.getString(NICK_KEY) ?: "", arguments?.getString(
+            PASSWORD_KEY
         ) ?: "")
     }
 

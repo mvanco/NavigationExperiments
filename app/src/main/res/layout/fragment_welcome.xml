@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="eu.matoosh.navigation.viewmodels.WelcomeViewModel" />
+            type="eu.matoosh.navigation.home.WelcomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

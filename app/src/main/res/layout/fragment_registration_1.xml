@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="eu.matoosh.navigation.viewmodels.Registration1ViewModel" />
+            type="eu.matoosh.navigation.registration.Registration1ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

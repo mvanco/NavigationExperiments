@@ -1,4 +1,4 @@
-package eu.matoosh.navigation.viewmodels
+package eu.matoosh.navigation.home
 
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel

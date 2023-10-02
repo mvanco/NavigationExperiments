@@ -1,4 +1,4 @@
-package eu.matoosh.navigation.view
+package eu.matoosh.navigation.registration
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentRegistration1Binding
-import eu.matoosh.navigation.databinding.FragmentRegistration2Binding
-import eu.matoosh.navigation.viewmodels.Registration1ViewModel
+import eu.matoosh.navigation.disambiguation.DisambiguationFragment
 import javax.inject.Inject
 
 @AndroidEntryPoint

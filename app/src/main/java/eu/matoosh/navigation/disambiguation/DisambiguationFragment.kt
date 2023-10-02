@@ -1,4 +1,4 @@
-package eu.matoosh.navigation.view
+package eu.matoosh.navigation.disambiguation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentDisambiguationBinding
-import eu.matoosh.navigation.viewmodels.DisambiguationViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint

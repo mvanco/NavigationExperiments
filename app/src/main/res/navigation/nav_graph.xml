@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/disambiguation"
-        android:name="eu.matoosh.navigation.view.DisambiguationFragment"
+        android:name="eu.matoosh.navigation.disambiguation.DisambiguationFragment"
         android:label="DisambiguationFragment"
         tools:layout="@layout/fragment_disambiguation" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/registration1"
-        android:name="eu.matoosh.navigation.view.Registration1Fragment"
+        android:name="eu.matoosh.navigation.registration.Registration1Fragment"
         android:label="Registration1Fragment"
         tools:layout="@layout/fragment_registration_1">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/registration2"
-        android:name="eu.matoosh.navigation.view.Registration2Fragment"
+        android:name="eu.matoosh.navigation.registration.Registration2Fragment"
         android:label="Registration2Fragment"
         tools:layout="@layout/fragment_registration_2">
         <argument
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="eu.matoosh.navigation.view.LoginFragment"
+        android:name="eu.matoosh.navigation.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome"
-        android:name="eu.matoosh.navigation.view.WelcomeFragment"
+        android:name="eu.matoosh.navigation.home.WelcomeFragment"
         android:label="WelcomeFragment"
         tools:layout="@layout/fragment_welcome">
         <argument
