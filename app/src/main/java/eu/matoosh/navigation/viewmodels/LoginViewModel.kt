@@ -1,0 +1,32 @@
+package eu.matoosh.navigation.viewmodels
+
+import androidx.compose.runtime.Stable
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
+
+enum class LoginErrorCode() {
+    UNKNOWN_ERROR
+}
+
+@Stable
+sealed interface LoginUiState {
+    object Idle : LoginUiState
+}
+
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+
+) : ViewModel() {
+    private val _uiState = MutableStateFlow<LoginUiState>(LoginUiState.Idle)
+    val uiState = _uiState.asStateFlow()
+
+    private val _nick = MutableStateFlow<String>("")
+    val nick = MutableStateFlow<String>("")
+
+    private val _password = MutableStateFlow<String>("")
+    val password = MutableStateFlow<String>("")
+
+}

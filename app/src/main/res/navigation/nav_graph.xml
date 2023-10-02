@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/disambiguation">
+
+    <fragment
+        android:id="@+id/disambiguation"
+        android:name="eu.matoosh.navigation.view.DisambiguationFragment"
+        android:label="DisambiguationFragment"
+        tools:layout="@layout/fragment_disambiguation" >
+        <action
+            android:id="@+id/action_disambiguation_to_registration1"
+            app:destination="@id/registration1"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_disambiguation_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration1"
+        android:name="eu.matoosh.navigation.view.Registration1Fragment"
+        android:label="Registration1Fragment"
+        tools:layout="@layout/fragment_registration_1">
+        <action
+            android:id="@+id/action_registration1_to_registration2"
+            app:destination="@id/registration2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration2"
+        android:name="eu.matoosh.navigation.view.Registration2Fragment"
+        android:label="Registration2Fragment"
+        tools:layout="@layout/fragment_registration_2">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="surname"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_registration2_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/disambiguation"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="eu.matoosh.navigation.view.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcome" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome"
+        android:name="eu.matoosh.navigation.view.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome"/>
+</navigation>
