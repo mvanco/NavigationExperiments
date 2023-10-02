@@ -35,16 +35,12 @@ class WelcomeFragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        viewModel.initialize(arguments?.getString(SESSION_KEY) ?: "")
     }
 
     companion object {
         const val TAG = "WelcomeFragment"
-        private const val KEY_ID = "id"
-
-        fun forId(id: String) = DisambiguationFragment().apply {
-            arguments = Bundle().apply {
-                putString(KEY_ID, id)
-            }
-        }
+        private const val SESSION_KEY = "session"
     }
 }

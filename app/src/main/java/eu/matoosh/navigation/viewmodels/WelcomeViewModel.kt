@@ -23,5 +23,10 @@ class WelcomeViewModel @Inject constructor(
     private val _uiState = MutableStateFlow<WelcomeUiState>(WelcomeUiState.Idle)
     val uiState = _uiState.asStateFlow()
 
+    private val _session = MutableStateFlow<String>("")
+    val session = _session.asStateFlow()
 
+    fun initialize(session: String) {
+        _session.value = "session: \"$session\""
+    }
 }

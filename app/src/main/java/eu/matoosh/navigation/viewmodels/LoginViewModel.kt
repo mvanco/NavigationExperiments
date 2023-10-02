@@ -23,10 +23,12 @@ class LoginViewModel @Inject constructor(
     private val _uiState = MutableStateFlow<LoginUiState>(LoginUiState.Idle)
     val uiState = _uiState.asStateFlow()
 
-    private val _nick = MutableStateFlow<String>("")
     val nick = MutableStateFlow<String>("")
-
-    private val _password = MutableStateFlow<String>("")
     val password = MutableStateFlow<String>("")
+
+    fun prefill(nickParam: String, passwordParam: String) {
+        nick.value = nickParam
+        password.value = passwordParam
+    }
 
 }

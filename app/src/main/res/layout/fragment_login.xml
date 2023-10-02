@@ -21,7 +21,8 @@
             android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@{viewModel.nick}"
+            android:hint="Nick"
+            android:text="@={viewModel.nick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +34,8 @@
             android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="text"
-            android:text="@{viewModel.password}"
+            android:hint="Password"
+            android:text="@={viewModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nick_edittext" />

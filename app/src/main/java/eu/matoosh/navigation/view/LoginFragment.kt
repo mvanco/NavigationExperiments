@@ -29,8 +29,10 @@ class LoginFragment @Inject constructor() : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding.loginDoneButton.setOnClickListener {
-            val action = LoginFragmentDirections.actionLoginToWelcome()
-            findNavController().navigate(action)
+            if (viewModel.nick.value == "maty" && viewModel.password.value == "heslo") {
+                val action = LoginFragmentDirections.actionLoginToWelcome("${viewModel.nick.value}:${viewModel.password.value}")
+                findNavController().navigate(action)
+            }
         }
         return binding.root
     }
@@ -39,16 +41,15 @@ class LoginFragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        viewModel.prefill(arguments?.getString(LoginFragment.NICK_KEY) ?: "", arguments?.getString(
+            LoginFragment.PASSWORD_KEY
+        ) ?: "")
     }
 
     companion object {
         const val TAG = "LoginFragment"
-        private const val KEY_ID = "id"
-
-        fun forId(id: String) = DisambiguationFragment().apply {
-            arguments = Bundle().apply {
-                putString(KEY_ID, id)
-            }
-        }
+        private const val NICK_KEY = "nick"
+        private const val PASSWORD_KEY = "password"
     }
 }

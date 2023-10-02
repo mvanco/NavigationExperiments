@@ -55,7 +55,8 @@
             android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Nick"
+            android:hint="Nick"
+            android:text="@={viewModel.nick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -67,7 +68,8 @@
             android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Heslo"
+            android:hint="Heslo"
+            android:text="@={viewModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText3" />

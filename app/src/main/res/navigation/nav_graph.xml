@@ -52,11 +52,24 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_welcome"
-            app:destination="@id/welcome" />
+            app:destination="@id/welcome"
+            app:popUpTo="@id/disambiguation" />
+        <argument
+            android:name="nick"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/welcome"
         android:name="eu.matoosh.navigation.view.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome"/>
+        tools:layout="@layout/fragment_welcome">
+        <argument
+            android:name="session"
+            app:argType="string" />
+    </fragment>
 </navigation>

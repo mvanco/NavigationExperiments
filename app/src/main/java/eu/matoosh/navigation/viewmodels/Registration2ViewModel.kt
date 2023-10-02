@@ -30,6 +30,9 @@ class Registration2ViewModel @Inject constructor(
     private val _surname = MutableStateFlow<String>("")
     val surname = _surname.asStateFlow()
 
+    val nick = MutableStateFlow<String>("")
+    val password = MutableStateFlow<String>("")
+
     fun initialize(name: String, surname: String) {
         _uiState.value = Registration2UiState.Idle(name, surname)
         _name.value = name

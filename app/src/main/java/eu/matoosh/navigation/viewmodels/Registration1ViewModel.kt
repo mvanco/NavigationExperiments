@@ -24,10 +24,7 @@ class Registration1ViewModel @Inject constructor(
     private val _uiState = MutableStateFlow<Registration1UiState>(Registration1UiState.Idle)
     val uiState = _uiState.asStateFlow()
 
-    private val _name = MutableStateFlow<String>("")
     val name = MutableStateFlow<String>("")
-
-    private val _surname = MutableStateFlow<String>("")
     val surname = MutableStateFlow<String>("")
 
     fun onDone(v: View) {

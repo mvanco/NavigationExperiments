@@ -28,7 +28,10 @@ class Registration2Fragment @Inject constructor() : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_registration_2, container, false)
         binding.registration2DoneButton.setOnClickListener {
-            val directions = Registration2FragmentDirections.actionRegistration2ToLogin()
+            val directions = Registration2FragmentDirections.actionRegistration2ToLogin(
+                viewModel.nick.value,
+                viewModel.password.value
+            )
             findNavController().navigate(directions)
         }
         return binding.root
