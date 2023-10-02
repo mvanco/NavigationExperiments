@@ -27,13 +27,6 @@ class Registration2Fragment @Inject constructor() : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_registration_2, container, false)
-        binding.registration2DoneButton.setOnClickListener {
-            val directions = Registration2FragmentDirections.actionRegistration2ToLogin(
-                viewModel.nick.value,
-                viewModel.password.value
-            )
-            findNavController().navigate(directions)
-        }
         return binding.root
     }
 
@@ -41,6 +34,15 @@ class Registration2Fragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        binding.registration2DoneButton.setOnClickListener {
+            val directions = Registration2FragmentDirections.actionRegistration2ToLogin(
+                viewModel.nick.value,
+                viewModel.password.value
+            )
+            findNavController().navigate(directions)
+        }
+
         viewModel.initialize(args.name, args.surname)
     }
 }

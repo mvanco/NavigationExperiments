@@ -27,12 +27,6 @@ class LoginFragment @Inject constructor() : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
-        binding.loginDoneButton.setOnClickListener {
-            if (viewModel.nick.value == "maty" && viewModel.password.value == "heslo") {
-                val action = LoginFragmentDirections.actionLoginToWelcome("${viewModel.nick.value}:${viewModel.password.value}")
-                findNavController().navigate(action)
-            }
-        }
         return binding.root
     }
 
@@ -40,6 +34,13 @@ class LoginFragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        binding.loginDoneButton.setOnClickListener {
+            if (viewModel.nick.value == "maty" && viewModel.password.value == "heslo") {
+                val action = LoginFragmentDirections.actionLoginToWelcome("${viewModel.nick.value}:${viewModel.password.value}")
+                findNavController().navigate(action)
+            }
+        }
 
         viewModel.prefill(args.nick ?: "", args.password ?: "")
     }
