@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="eu.matoosh.navigation.home.WelcomeUiState.Idle"/>
+        <import type="android.view.View"/>
+        <import type="eu.matoosh.navigation.home.WelcomeUiState"/>
         <variable
             name="viewModel"
             type="eu.matoosh.navigation.home.WelcomeViewModel" />
@@ -36,6 +37,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/message" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#373737"
+            android:visibility="@{viewModel.uiState instanceof WelcomeUiState.Idle ? View.GONE : View.VISIBLE }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/loading_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.uiState instanceof WelcomeUiState.Idle ? View.GONE : View.VISIBLE }"
+            android:textSize="24sp"
+            android:text="Načítavam..."
+            tools:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

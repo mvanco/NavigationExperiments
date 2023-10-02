@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
 import eu.matoosh.navigation.databinding.FragmentWelcomeBinding
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -34,6 +36,8 @@ class WelcomeFragment @Inject constructor() : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        viewModel.initialize(args.session)
+        lifecycleScope.launch {
+            viewModel.initialize(args.session)
+        }
     }
 }
