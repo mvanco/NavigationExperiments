@@ -1,4 +1,4 @@
-package eu.matoosh.navigation.home
+package eu.matoosh.navigation.pages
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,26 +7,23 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import eu.matoosh.navigation.R
-import eu.matoosh.navigation.databinding.FragmentWelcomeBinding
-import kotlinx.coroutines.launch
+import eu.matoosh.navigation.databinding.FragmentsPageBinding
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class WelcomeFragment @Inject constructor() : Fragment() {
+class SettingsFragment @Inject constructor() : Fragment() {
 
-    private val viewModel: WelcomeViewModel by viewModels()
-    private lateinit var binding: FragmentWelcomeBinding
+    private val viewModel: PagesViewModel by viewModels()
+    private lateinit var binding: FragmentsPageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragments_page, container, false)
         return binding.root
     }
 
@@ -34,5 +31,7 @@ class WelcomeFragment @Inject constructor() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        viewModel.initialize("Settings")
     }
 }

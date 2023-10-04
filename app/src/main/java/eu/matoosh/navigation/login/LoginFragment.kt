@@ -37,7 +37,7 @@ class LoginFragment @Inject constructor() : Fragment() {
 
         binding.loginDoneButton.setOnClickListener {
             if (viewModel.nick.value == "maty" && viewModel.password.value == "heslo") {
-                val action = LoginFragmentDirections.actionLoginToWelcome("${viewModel.nick.value}:${viewModel.password.value}")
+                val action = LoginFragmentDirections.actionLoginToWelcome()
                 findNavController().navigate(action)
             }
         }

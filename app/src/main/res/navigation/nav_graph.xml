@@ -9,13 +9,16 @@
         android:id="@+id/disambiguation"
         android:name="eu.matoosh.navigation.disambiguation.DisambiguationFragment"
         android:label="DisambiguationFragment"
-        tools:layout="@layout/fragment_disambiguation" >
+        tools:layout="@layout/fragment_disambiguation">
         <action
             android:id="@+id/action_disambiguation_to_registration1"
             app:destination="@id/registration1" />
         <action
             android:id="@+id/action_disambiguation_to_login"
             app:destination="@id/login" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://matoosh.eu/aboutme" />
     </fragment>
     <fragment
         android:id="@+id/registration1"
@@ -63,13 +66,10 @@
             app:argType="string"
             app:nullable="true" />
     </fragment>
-    <fragment
+    <activity
         android:id="@+id/welcome"
-        android:name="eu.matoosh.navigation.home.WelcomeFragment"
-        android:label="WelcomeFragment"
+        android:name="eu.matoosh.navigation.HomeActivity"
+        android:label="WelcomeActivity"
         tools:layout="@layout/fragment_welcome">
-        <argument
-            android:name="session"
-            app:argType="string" />
-    </fragment>
+    </activity>
 </navigation>
