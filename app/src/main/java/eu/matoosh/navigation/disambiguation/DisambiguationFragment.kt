@@ -30,7 +30,7 @@ class DisambiguationFragment @Inject constructor() : Fragment() {
             findNavController().navigate(action)
         }
         binding.loginButton.setOnClickListener {
-            val directions = DisambiguationFragmentDirections.actionDisambiguationToLogin(null, null)
+            val directions = DisambiguationFragmentDirections.actionDisambiguationToLogin()
             findNavController().navigate(directions)
         }
         return binding.root

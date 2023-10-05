@@ -15,7 +15,16 @@
             app:destination="@id/registration1" />
         <action
             android:id="@+id/action_disambiguation_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login" >
+            <argument
+                android:name="nick"
+                android:defaultValue=""
+                app:nullable="true" />
+            <argument
+                android:name="password"
+                android:defaultValue=""
+                app:nullable="true" />
+        </action>
         <deepLink
             android:id="@+id/deepLink2"
             app:uri="https://matoosh.eu/aboutme" />
